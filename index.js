@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 clinet.on('message', msg => {
-  if(msg.channel.id === "") {
+  if(msg.channel.id === "752708745674621018") {
    const file = fs.readFileSync("/logs.txt", {encoding: "utf-8"})
    fs.appendFileSync("/logs.txt", `${msg}`, {encoding: "utf-8"})
     console.log(file)
