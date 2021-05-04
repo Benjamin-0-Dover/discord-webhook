@@ -9,10 +9,11 @@
     <input id="webhookName" placeholder="Name">
     <input id="avatarUrl" placeholder="Avatar Url">
     <input id="yourMessage" placeholder="Message">
-    <input type="submit" onclick="sendMessage()" onclick="location.reload()" value="Send"></input>
+    <input type="submit" onclick="sendMessage()"></input>
   </body>
 
   <script>
+
     var wname = document.getElementById('webhookName')
     var wavatar = document.getElementById('avatarUrl')
     var ymessage = document.getElementById('yourMessage')
@@ -20,7 +21,7 @@
 
     function sendMessage() {
       var request = new XMLHttpRequest();
-      request.open("POST", "YOURWEBHOOKURLHERE");
+      request.open("POST", "https://discord.com/api/webhooks/838983566524284948/rWgcGPJA8kLKh2VaPos5VDKz06kh2EH49gE-CJRhcDfAGHMK1aH2PfvjePRVgx8smAC4");
 
       request.setRequestHeader('Content-type', 'application/json');
 
@@ -30,8 +31,8 @@
         content: ymessage.value
       }
 
+
       request.send(JSON.stringify(params));
     }
-    
   </script>
 </html>
