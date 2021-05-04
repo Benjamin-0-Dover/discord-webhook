@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhooks</title>
+  </head>
+  <body>
+    <input id="webhookName" placeholder="Name">
+    <input id="avatarUrl" placeholder="Avatar Url">
+    <input id="yourMessage" placeholder="Message">
+    <input type="submit" onclick="sendMessage()" onclick="location.reload()" value="Send"></input>
+  </body>
+
+  <script>
+    var wname = document.getElementById('webhookName')
+    var wavatar = document.getElementById('avatarUrl')
+    var ymessage = document.getElementById('yourMessage')
+
+
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", "YOURWEBHOOKURLHERE");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: wname.value,
+        avatar_url: wavatar.value,
+        content: ymessage.value
+      }
+
+      request.send(JSON.stringify(params));
+    }
+    
+  </script>
+</html>
